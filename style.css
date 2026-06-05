@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #1a1a2e;
+    font-family: 'Arial Black', Arial, sans-serif;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#gameCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ui-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ui-element {
+    pointer-events: auto;
+}
+
+#pauseBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.5);
+    border: 3px solid white;
+    border-radius: 12px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreContainer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+#score {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#coinCount {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.coin-icon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 50%;
+    border: 2px solid #B8860B;
+}
+
+#distance {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu-panel {
+    background: linear-gradient(180deg, #2C3E50, #1a252f);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 4px solid #3498db;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    max-width: 90%;
+    width: 400px;
+}
+
+.game-title {
+    font-size: 42px;
+    color: #FFD700;
+    text-shadow: 3px 3px 0 #FF6B35, 6px 6px 0 rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-play {
+    background: linear-gradient(180deg, #2ECC71, #27AE60);
+    color: white;
+    box-shadow: 0 6px 0 #1E8449, 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-play:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #1E8449;
+}
+
+.btn-secondary {
+    background: linear-gradient(180deg, #3498DB, #2980B9);
+    color: white;
+    box-shadow: 0 6px 0 #1F618D, 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-value {
+    color: #FFD700;
+}
+
+.new-record {
+    color: #FF6B35;
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.high-score-display {
+    color: #aaa;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#instructions {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.controls-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    text-align: center;
+}
